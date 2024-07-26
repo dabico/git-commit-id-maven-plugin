@@ -587,27 +587,14 @@
             </activation>
             <build>
                 <plugins>
-                    <!-- https://sumit-jha.medium.com/how-to-make-maven-release-plugin-work-with-git-submodules-917825a253f2 -->
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.3.0</version>
-                        <inherited>false</inherited>
+                        <groupId>ch.usi.si.seart</groupId>
+                        <artifactId>git-submodule-maven-plugin</artifactId>
+                        <version>1.0.0</version>
                         <executions>
                             <execution>
-                                <id>clone git submodule</id>
-                                <phase>initialize</phase>
-                                <configuration>
-                                    <executable>git</executable>
-                                    <arguments>
-                                        <argument>submodule</argument>
-                                        <argument>update</argument>
-                                        <argument>--init</argument>
-                                        <argument>--recursive</argument>
-                                    </arguments>
-                                </configuration>
                                 <goals>
-                                    <goal>exec</goal>
+                                    <goal>update</goal>
                                 </goals>
                             </execution>
                         </executions>
